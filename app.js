@@ -4,7 +4,7 @@ var svgWidth = 960;
 var svgHeight = 500;
 
 var margin = {
-  top: 20,
+  top: 60,
   right: 40,
   bottom: 60,
   left: 50
@@ -29,7 +29,7 @@ var chartGroup = svg.append("g")
 // Step 3:
 // Import data from the donuts.csv file
 // =================================
-d3.csv("Resources/genderByYear.csv").then(function(genderData) {
+d3.csv("Resources/summerGenderByYear.csv").then(function(genderData) {
   // Step 4: Parse the data
   // Format the data and convert to numerical and date values
   // =================================
@@ -41,6 +41,7 @@ d3.csv("Resources/genderByYear.csv").then(function(genderData) {
     data.year = parseTime(data.year);
     data.male = +data.male;
     data.female = +data.female;
+    data.total = +data.total;
   });
 
   // Step 5: Create the scales for the chart
@@ -49,7 +50,9 @@ d3.csv("Resources/genderByYear.csv").then(function(genderData) {
     .domain(d3.extent(genderData, d => d.year))
     .range([0, width]);
 
-  var yLinearScale = d3.scaleLinear().range([height, 0]);
+  var yLinearScale = d3.scaleLinear()
+    .domain([0, d3.max(genderData, d => d.total)])
+    .range([height, 0]);
 
   // Step 6: Set up the y-axis domain
   // ==============================================
@@ -76,7 +79,7 @@ d3.csv("Resources/genderByYear.csv").then(function(genderData) {
 
   // Step 7: Create the axes
   // =================================
-  var bottomAxis = d3.axisBottom(xTimeScale).tickFormat(d3.timeFormat("%d-%b"));
+  var bottomAxis = d3.axisBottom(xTimeScale).tickFormat(d3.timeFormat("%Y"));
   var leftAxis = d3.axisLeft(yLinearScale);
 
   // Step 8: Append the axes to the chartGroup
@@ -92,18 +95,19 @@ d3.csv("Resources/genderByYear.csv").then(function(genderData) {
   // Step 9: Set up two line generators and append two SVG paths
   // ==============================================
 
-  // Line generator for morning data
+  // Line generator for male athlete data
   var line1 = d3.line()
     .x(d => xTimeScale(d.year))
     .y(d => yLinearScale(d.male));
 
-  // Line generator for evening data
+  // Line generator for femail athlete data
   var line2 = d3.line()
     .x(d => xTimeScale(d.year))
     .y(d => yLinearScale(d.female));
 
   // Append a path for line1
   chartGroup
+    .data([genderData])
     .append("path")
     .attr("d", line1(genderData))
     .classed("line green", true);
