@@ -29,7 +29,7 @@ var chartGroup = svg.append("g")
 // Step 3:
 // Import data from the donuts.csv file
 // =================================
-d3.csv("Resources/olympics.csv").then(function(olympicData) {
+d3.csv("Resources/genderByYear.csv").then(function(genderData) {
   // Step 4: Parse the data
   // Format the data and convert to numerical and date values
   // =================================
@@ -37,15 +37,16 @@ d3.csv("Resources/olympics.csv").then(function(olympicData) {
   var parseTime = d3.timeParse("%Y");
 
   // Format the data
-  olympicData.forEach(function(data) {
+  genderData.forEach(function(data) {
     data.year = parseTime(data.year);
-    data.gender = data.gender;
+    data.male = +data.male;
+    data.female = +data.female;
   });
 
   // Step 5: Create the scales for the chart
   // =================================
   var xTimeScale = d3.scaleTime()
-    .domain(d3.extent(olympicData, d => d.date))
+    .domain(d3.extent(genderData, d => d.year))
     .range([0, width]);
 
   var yLinearScale = d3.scaleLinear().range([height, 0]);
@@ -54,10 +55,18 @@ d3.csv("Resources/olympics.csv").then(function(olympicData) {
   // ==============================================
   // @NEW! determine the max y value
   // find the max of the morning data
-  var gender = d3.max(olympicData, d => d.gender);
+  var maleMax = d3.max(genderData, d => d.male);
 
   // find the max of the evening data
-  //var eveningMax = d3.max(olympicData, d => d.evening);
+  var femaleMax = d3.max(genderData, d => d.female);
+
+  var yMax;
+  if (maleMax > femaleMax) {
+    yMax = maleMax;
+  }
+  else {
+    yMax = femaleMax;
+  }
 
   // var yMax = morningMax > eveningMax ? morningMax : eveningMax;
 
@@ -85,21 +94,23 @@ d3.csv("Resources/olympics.csv").then(function(olympicData) {
 
   // Line generator for morning data
   var line1 = d3.line()
-    .x(d => xTimeScale(d.date))
-    .y(d => yLinearScale(d.gender));
+    .x(d => xTimeScale(d.year))
+    .y(d => yLinearScale(d.male));
 
   // Line generator for evening data
-  
+  var line2 = d3.line()
+    .x(d => xTimeScale(d.year))
+    .y(d => yLinearScale(d.female));
 
   // Append a path for line1
   chartGroup
     .append("path")
-    .attr("d", line1(olympicData))
+    .attr("d", line1(genderData))
     .classed("line green", true);
 
   // Append a path for line2
   chartGroup
-    .data([olympicData])
+    .data([genderData])
     .append("path")
     .attr("d", line2)
     .classed("line orange", true);
@@ -107,3 +118,4 @@ d3.csv("Resources/olympics.csv").then(function(olympicData) {
 }).catch(function(error) {
   console.log(error);
 });
+
