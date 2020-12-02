@@ -4,7 +4,7 @@ var svgWidth = 960;
 var svgHeight = 500;
 
 var margin = {
-  top: 60,
+  top: 20,
   right: 40,
   bottom: 60,
   left: 50
@@ -27,9 +27,9 @@ var chartGroup = svg.append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 // Step 3:
-// Import data from the donuts.csv file
+// Import data from the usaGoldMedals.csv file; this file represents USA Athletes Gold Medal winners
 // =================================
-d3.csv("Resources/summerGenderByYear.csv").then(function(genderData) {
+d3.csv("Resources/usaGoldMedals.csv").then(function(usaData) {
   // Step 4: Parse the data
   // Format the data and convert to numerical and date values
   // =================================
@@ -37,31 +37,28 @@ d3.csv("Resources/summerGenderByYear.csv").then(function(genderData) {
   var parseTime = d3.timeParse("%Y");
 
   // Format the data
-  genderData.forEach(function(data) {
+  usaData.forEach(function(data) {
     data.year = parseTime(data.year);
     data.male = +data.male;
     data.female = +data.female;
-    data.total = +data.total;
   });
 
   // Step 5: Create the scales for the chart
   // =================================
   var xTimeScale = d3.scaleTime()
-    .domain(d3.extent(genderData, d => d.year))
+    .domain(d3.extent(usaData, d => d.year))
     .range([0, width]);
 
-  var yLinearScale = d3.scaleLinear()
-    .domain([0, d3.max(genderData, d => d.total)])
-    .range([height, 0]);
+  var yLinearScale = d3.scaleLinear().range([height, 0]);
 
   // Step 6: Set up the y-axis domain
   // ==============================================
   // @NEW! determine the max y value
-  // find the max of the morning data
-  var maleMax = d3.max(genderData, d => d.male);
+  // find the max of the male data
+  var maleMax = d3.max(usaData, d => d.male);
 
-  // find the max of the evening data
-  var femaleMax = d3.max(genderData, d => d.female);
+  // find the max of the female data
+  var femaleMax = d3.max(usaData, d => d.female);
 
   var yMax;
   if (maleMax > femaleMax) {
@@ -71,7 +68,7 @@ d3.csv("Resources/summerGenderByYear.csv").then(function(genderData) {
     yMax = femaleMax;
   }
 
-  // var yMax = morningMax > eveningMax ? morningMax : eveningMax;
+  // var yMax = maleMax > femaleMax ? maleMax : femaleMax;
 
   // Use the yMax value to set the yLinearScale domain
   yLinearScale.domain([0, yMax]);
@@ -95,31 +92,48 @@ d3.csv("Resources/summerGenderByYear.csv").then(function(genderData) {
   // Step 9: Set up two line generators and append two SVG paths
   // ==============================================
 
-  // Line generator for male athlete data
+  // Line generator for male data
   var line1 = d3.line()
     .x(d => xTimeScale(d.year))
     .y(d => yLinearScale(d.male));
 
-  // Line generator for femail athlete data
+  // Line generator for female data
   var line2 = d3.line()
     .x(d => xTimeScale(d.year))
     .y(d => yLinearScale(d.female));
 
   // Append a path for line1
   chartGroup
-    .data([genderData])
     .append("path")
-    .attr("d", line1(genderData))
-    .classed("line green", true);
+    .attr("d", line1(usaData))
+    .classed("line blue", true);
 
   // Append a path for line2
   chartGroup
-    .data([genderData])
+    .data([usaData])
     .append("path")
     .attr("d", line2)
-    .classed("line orange", true);
+    .classed("line red", true);
+
+  // Add color coded titles to the x-axis
+
+  chartGroup.append("text")
+    // Position the text
+    // Center the text:
+    // (https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-anchor)
+    .attr("transform", `translate(${width / 2}, ${height + margin.top + 20})`)
+    .attr("text-anchor", "middle")
+    .attr("font-size", "16px")
+    .attr("fill", "blue")
+    .text("USA Male Gold Medal Athletes");
+
+  chartGroup.append("text")
+    .attr("transform", `translate(${width / 2}, ${height + margin.top + 37})`)
+    .attr("text-anchor", "middle")
+    .attr("font-size", "16px")
+    .attr("fill", "red")
+    .text("USA Female Gold Medal Athletes");
 
 }).catch(function(error) {
   console.log(error);
 });
-
