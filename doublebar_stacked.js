@@ -181,51 +181,51 @@
     var sport_1988=olympics_1988.map(data=>data.sport)
     console.log(sport_1988)
 
-    function wordCount(myString) {
-      // Convert string to an array of words
-      var stringArray = sport_1988
+    // function wordCount(myString) {
+    //   // Convert string to an array of words
+    //   var stringArray = sport_1988
     
-      // An object to hold word frequency
-      var wordFrequency = {};
+    //   // An object to hold word frequency
+    //   var wordFrequency = {};
     
-      // Iterate through the array
-      for (var i = 0; i < stringArray.length; i++) {
-        var currentWord = stringArray[i];
-        // If the word has been seen before...
-        if (currentWord in wordFrequency) {
-          // Add one to the counter
-          wordFrequency[currentWord] += 1;
-        }
-        else {
-          // Set the counter at 1
-          wordFrequency[currentWord] = 1;
-        }
-      }
-      console.log(wordFrequency);
+    //   // Iterate through the array
+    //   for (var i = 0; i < stringArray.length; i++) {
+    //     var currentWord = stringArray[i];
+    //     // If the word has been seen before...
+    //     if (currentWord in wordFrequency) {
+    //       // Add one to the counter
+    //       wordFrequency[currentWord] += 1;
+    //     }
+    //     else {
+    //       // Set the counter at 1
+    //       wordFrequency[currentWord] = 1;
+    //     }
+    //   }
+    //   console.log(wordFrequency);
 
-      var sportEvent1988 = Object.keys(wordFrequency);
-      var sportEventCount1988= Object.values(wordFrequency);
-      console.log((sportEvent1988))
-      console.log(sportEventCount1988)     
+    //   var sportEvent1988 = Object.keys(wordFrequency);
+    //   var sportEventCount1988= Object.values(wordFrequency);
+    //   console.log((sportEvent1988))
+    //   console.log(sportEventCount1988)     
       
-      var trace1 = {
-        x: sportEvent1988,
-        y: sportEventCount1988 ,
-        type: "bar"
-      };
+    //   var trace1 = {
+    //     x: sportEvent1988,
+    //     y: sportEventCount1988 ,
+    //     type: "bar"
+    //   };
       
-      var data = [trace1];
+    //   var data = [trace1];
       
-      var layout = {
-        title: "'Bar' Chart"
-      };
+    //   var layout = {
+    //     title: "'Bar' Chart"
+    //   };
       
-      Plotly.newPlot("plot", data, layout);
+    //   Plotly.newPlot("plot", data, layout);
 
-      return wordFrequency;
-    }
+    //   return wordFrequency;
+    // }
 
-    wordCount("I yam what I yam and always will be what I yam");
+    // wordCount("I yam what I yam and always will be what I yam");
 
     const olympics_1992=data.filter(d=>d.year==="1992");
     var sport_1992=olympics_1992.map(data=>data.sport)
