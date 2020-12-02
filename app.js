@@ -1,10 +1,10 @@
 // Step 1: Set up our chart
 //= ================================
-var svgWidth = 960;
+var svgWidth = 900;
 var svgHeight = 500;
 
 var margin = {
-  top: 20,
+  top: 60,
   right: 40,
   bottom: 60,
   left: 50
@@ -116,6 +116,13 @@ d3.csv("Resources/usaGoldMedals.csv").then(function(usaData) {
     .classed("line red", true);
 
   // Add color coded titles to the x-axis
+  chartGroup.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 0 - margin.left)
+    .attr("x", 0 - (height / 2))
+    .attr("dy", "1em")
+    .attr("class", "axisText")
+    .text("Gold Medal Athletes");
 
   chartGroup.append("text")
     // Position the text
