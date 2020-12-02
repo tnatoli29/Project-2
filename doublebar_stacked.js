@@ -2,7 +2,7 @@
 
 // function buildPlot(){
   d3.csv("./Resources/olympicscjb.csv").then(function(data) {
-    console.log(data);
+    // console.log(data);
 
     var years=data.map(data=>data.year)
     // console.log(years);
@@ -105,40 +105,22 @@
       var sportEvent1976 = Object.keys(wordFrequency);
       var sportEventCount1976= Object.values(wordFrequency);
       console.log((sportEvent1976))
-      console.log(sportEventCount1976)
-
-
+      console.log(sportEventCount1976)     
       
-  //   var trace1 = {
-  //     x: sportEvent1976,
-  //     y: sportEventCount1976,
-  //     // text: data.map(row => row.greekName),
-  //     name: "Greek",
-  //     type: "bar"
-  //   };
-  //   // var trace1 = {
-  //   //   x: years,
-  //   //   y: sport,
-  //   //   name: 'Dog',
-  //   //   type: 'bar'
-  //   // };
-    
-  //   // var trace2 = {
-  //   //   x: sport,
-  //   //   y: womenOlympics2016,
-  //   //   name: 'cow',
-  //   //   type: 'bar'
-  //   // };
+      var trace1 = {
+        x: sportEvent1976,
+        y: sportEventCount1976 ,
+        type: "bar"
+      };
+      
+      var data = [trace1];
+      
+      var layout = {
+        title: "'Bar' Chart"
+      };
+      
+      Plotly.newPlot("plot", data, layout);
 
-
-  //   var data = [trace1];
-  //   // var layout = {barmode: 'stack'}; 
-
-  //   Plotly.newPlot('plot', data);
-
-  // }
-     
-     
       return wordFrequency;
     }
 
