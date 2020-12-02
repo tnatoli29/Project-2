@@ -4,7 +4,7 @@ var svgWidth = 900;
 var svgHeight = 500;
 
 var margin = {
-  top: 60,
+  top: 20,
   right: 40,
   bottom: 60,
   left: 50
@@ -121,7 +121,6 @@ d3.csv("Resources/usaGoldMedals.csv").then(function(usaData) {
     .attr("y", 0 - margin.left)
     .attr("x", 0 - (height / 2))
     .attr("dy", "1em")
-    .attr("class", "axisText")
     .text("Gold Medal Athletes");
 
   chartGroup.append("text")
