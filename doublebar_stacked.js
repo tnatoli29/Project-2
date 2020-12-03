@@ -7,35 +7,8 @@
     var years=data.map(data=>data.year)
     // console.log(years);
 
-  //   function yearsUnique(year){
-  //     var uniqueYears = [];
-      
-  //     // Loop through array values
-  //     for(i=0; i < year.length; i++){
-  //         if(uniqueYears.indexOf(year[i]) === -1) {
-  //           uniqueYears.push(year[i]);
-  //         }
-  //     }
-  //     return uniqueYears;
-
-  // }
-  // var years = data.map(data=>data.year)
-  // var singleYears = yearsUnique(years);
-  // console.log(singleYears);
-
-//   function sportsUnique(event){
-//     var uniqueSports = [];
-    
-//     // Loop through array values
-//     for(i=0; i < sport.length; i++){
-//         if(uniqueSports.indexOf(sport[i]) === -1) {
-//           uniqueSports.push(sport[i]);
-//         }
-//     }
-//     return uniqueSports;
-
-// }
-  var sport=data.map(data=>data.sport)
+  
+    var sport=data.map(data=>data.sport)
 //   var uniqueSports = sportsUnique(sport);
   // console.log(uniqueSports);
     
@@ -551,11 +524,46 @@
 
     arrayYear2016("I yam what I yam and always will be what I yam");
 
-  //   const menOlympics2016=olympics_2016.filter(d=>d.sex==="male");
-  //   const womenOlympics2016=olympics_2016.filter(d=>d.sex==="female");
-  //   // console.log(womenOlympics2016)
-  //  var medal= data.map(data=>data.medal)
 
+//     // Initializes the page with a default plot
+//     function init() {
+//       dog = [{
+//       x: sportEventsAll,
+//       y: sportEventCountAll}];
+
+//       Plotly.newPlot("plot", dog);
+//       }
+
+//     // Call updatePlotly() when a change takes place to the DOM
+//       d3.selectAll("#selDataset").on("change", updatePlotly);
+
+//     // This function is called when a dropdown menu item is selected
+//     function updatePlotly() {
+//     // Use D3 to select the dropdown menu
+//     var dropdownMenu = d3.select("#selDataset");
+//     // Assign the value of the dropdown menu option to a variable
+//     var dataset = dropdownMenu.property("value");
+
+//     // Initialize x and y arrays
+//     var x = [];
+//     var y = [];
+
+//     if (dataset === '1976') {
+//     x = sportEvent1976
+//     y = sportEventCount1976;
+//    }
+
+//     if (dataset === '1984') {
+//     x = sportEvent1984;
+//     y = sportEventCount1984;
+//    }
+
+//   // Note the extra brackets around 'x' and 'y'
+//       Plotly.restyle("plot", "x", [x]);
+//       Plotly.restyle("plot", "y", [y]);
+//     }
+
+// init();
 
 
 
