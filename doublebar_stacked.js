@@ -7,36 +7,36 @@
     var years=data.map(data=>data.year)
     // console.log(years);
 
-    function yearsUnique(year){
-      var uniqueYears = [];
+  //   function yearsUnique(year){
+  //     var uniqueYears = [];
       
-      // Loop through array values
-      for(i=0; i < year.length; i++){
-          if(uniqueYears.indexOf(year[i]) === -1) {
-            uniqueYears.push(year[i]);
-          }
-      }
-      return uniqueYears;
+  //     // Loop through array values
+  //     for(i=0; i < year.length; i++){
+  //         if(uniqueYears.indexOf(year[i]) === -1) {
+  //           uniqueYears.push(year[i]);
+  //         }
+  //     }
+  //     return uniqueYears;
 
-  }
-  var years = data.map(data=>data.year)
-  var singleYears = yearsUnique(years);
+  // }
+  // var years = data.map(data=>data.year)
+  // var singleYears = yearsUnique(years);
   // console.log(singleYears);
 
-  function sportsUnique(event){
-    var uniqueSports = [];
+//   function sportsUnique(event){
+//     var uniqueSports = [];
     
-    // Loop through array values
-    for(i=0; i < sport.length; i++){
-        if(uniqueSports.indexOf(sport[i]) === -1) {
-          uniqueSports.push(sport[i]);
-        }
-    }
-    return uniqueSports;
+//     // Loop through array values
+//     for(i=0; i < sport.length; i++){
+//         if(uniqueSports.indexOf(sport[i]) === -1) {
+//           uniqueSports.push(sport[i]);
+//         }
+//     }
+//     return uniqueSports;
 
-}
+// }
   var sport=data.map(data=>data.sport)
-  var uniqueSports = sportsUnique(sport);
+//   var uniqueSports = sportsUnique(sport);
   // console.log(uniqueSports);
     
     
@@ -49,31 +49,51 @@
 
     
    
-    // function allYears(myString) {
-    //   // Convert string to an array of words
-    //   var arrayAllyrs = sport
+    function allYears(myString) {
+      // Convert string to an array of words
+      var arrayAllyrs = sport
     
-    //   // An object to hold word frequency
-    //   var wordFrequencyAll = {};
+      // An object to hold word frequency
+      var wordFrequencyAll = {};
     
-    //   // Iterate through the array
-    //   for (var i = 0; i < arrayAllyrs.length; i++) {
-    //     var currentWordAll = arrayAllyrs[i];
-    //     // If the word has been seen before...
-    //     if (currentWordAll in wordFrequencyAll) {
-    //       // Add one to the counter
-    //       wordFrequencyAll[currentWordAll] += 1;
-    //     }
-    //     else {
-    //       // Set the counter at 1
-    //       wordFrequencyAll[currentWordAll] = 1;
-    //     }
-    //   }
-    //   console.log(wordFrequencyAll);
-    //   return wordFrequencyAll;
-    //   console.log(wordFrequencyAll);
-    // }
-    // allYears("I yam what I yam and always will be what I yam");
+      // Iterate through the array
+      for (var i = 0; i < arrayAllyrs.length; i++) {
+        var currentWordAll = arrayAllyrs[i];
+        // If the word has been seen before...
+        if (currentWordAll in wordFrequencyAll) {
+          // Add one to the counter
+          wordFrequencyAll[currentWordAll] += 1;
+        }
+        else {
+          // Set the counter at 1
+          wordFrequencyAll[currentWordAll] = 1;
+        }
+      }
+      console.log(wordFrequencyAll);
+      var sportEventsAll = Object.keys(wordFrequencyAll);
+      var sportEventCountAll= Object.values(wordFrequencyAll);
+      console.log((sportEventsAll))
+      console.log(sportEventCountAll)
+      
+      var trace1 = {
+        x: sportEventsAll,
+        y: sportEventCountAll ,
+        type: "bar"
+      };
+      
+      var data = [trace1];
+      
+      var layout = {
+        title: "All USA Olympic Gold Medals 1976-2016 (missing 1980 and 2012)"
+      };
+      
+      Plotly.newPlot("plot", data, layout);
+
+     
+      return wordFrequencyAll;
+      console.log(wordFrequencyAll);
+    }
+    allYears("I yam what I yam and always will be what I yam");
     
 
     const olympics_1976=data.filter(d=>d.year==="1976");
@@ -107,19 +127,19 @@
       console.log((sportEvent1976))
       console.log(sportEventCount1976)     
       
-      var trace1 = {
-        x: sportEvent1976,
-        y: sportEventCount1976 ,
-        type: "bar"
-      };
+      // var trace1 = {
+      //   x: sportEvent1976,
+      //   y: sportEventCount1976 ,
+      //   type: "bar"
+      // };
       
-      var data = [trace1];
+      // var data = [trace1];
       
-      var layout = {
-        title: "'Bar' Chart"
-      };
+      // var layout = {
+      //   title: "1976 USA Olympic Gold Medals"
+      // };
       
-      Plotly.newPlot("plot", data, layout);
+      // Plotly.newPlot("plot", data, layout);
 
       return wordFrequency1976;
     }
@@ -158,19 +178,19 @@
       console.log((sportEvent1984))
       console.log(sportEventCount1984)     
       
-      var trace1 = {
-        x: sportEvent1984,
-        y: sportEventCount1984 ,
-        type: "bar"
-      };
+      // var trace1 = {
+      //   x: sportEvent1984,
+      //   y: sportEventCount1984 ,
+      //   type: "bar"
+      // };
       
-      var data = [trace1];
+      // var data = [trace1];
       
-      var layout = {
-        title: "'Bar' Chart"
-      };
+      // var layout = {
+      //   title: "1984 USA Olympic Gold Medals"
+      // };
       
-      Plotly.newPlot("plot", data, layout);
+      // Plotly.newPlot("plot", data, layout);
 
       return wordFrequency1984;
     }
@@ -208,19 +228,19 @@
       console.log((sportEvent1988))
       console.log(sportEventCount1988)     
       
-      var trace1 = {
-        x: sportEvent1988,
-        y: sportEventCount1988 ,
-        type: "bar"
-      };
+      // var trace1 = {
+      //   x: sportEvent1988,
+      //   y: sportEventCount1988 ,
+      //   type: "bar"
+      // };
       
-      var data = [trace1];
+      // var data = [trace1];
       
-      var layout = {
-        title: "'Bar' Chart"
-      };
+      // var layout = {
+      //   title: "1988 USA Olympic Gold Medals"
+      // };
       
-      Plotly.newPlot("plot", data, layout);
+      // Plotly.newPlot("plot", data, layout);
 
       return wordFrequency1988;
     }
@@ -258,19 +278,19 @@
       console.log((sportEvent1992))
       console.log(sportEventCount1992)     
       
-      var trace1 = {
-        x: sportEvent1992,
-        y: sportEventCount1992 ,
-        type: "bar"
-      };
+      // var trace1 = {
+      //   x: sportEvent1992,
+      //   y: sportEventCount1992 ,
+      //   type: "bar"
+      // };
       
-      var data = [trace1];
+      // var data = [trace1];
       
-      var layout = {
-        title: "'Bar' Chart"
-      };
+      // var layout = {
+      //   title: "1992 USA Olympic Gold Medals"
+      // };
       
-      Plotly.newPlot("plot", data, layout);
+      // Plotly.newPlot("plot", data, layout);
 
       return wordFrequency1992;
     }
@@ -309,19 +329,19 @@
       console.log((sportEvent1996))
       console.log(sportEventCount1996)     
       
-      var trace1 = {
-        x: sportEvent1996,
-        y: sportEventCount1996 ,
-        type: "bar"
-      };
+      // var trace1 = {
+      //   x: sportEvent1996,
+      //   y: sportEventCount1996 ,
+      //   type: "bar"
+      // };
       
-      var data = [trace1];
+      // var data = [trace1];
       
-      var layout = {
-        title: "'Bar' Chart"
-      };
+      // var layout = {
+      //   title: "1996 USA Olympic Gold Medals"
+      // };
       
-      Plotly.newPlot("plot", data, layout);
+      // Plotly.newPlot("plot", data, layout);
 
       return wordFrequency1996;
     }
@@ -360,19 +380,19 @@
       console.log((sportEvent2000))
       console.log(sportEventCount2000)     
       
-      var trace1 = {
-        x: sportEvent2000,
-        y: sportEventCount2000 ,
-        type: "bar"
-      };
+      // var trace1 = {
+      //   x: sportEvent2000,
+      //   y: sportEventCount2000 ,
+      //   type: "bar"
+      // };
       
-      var data = [trace1];
+      // var data = [trace1];
       
-      var layout = {
-        title: "'Bar' Chart"
-      };
+      // var layout = {
+      //   title: "2000 USA Olympic Gold Medals"
+      // };
       
-      Plotly.newPlot("plot", data, layout);
+      // Plotly.newPlot("plot", data, layout);
 
       return wordFrequency2000;
     }
@@ -411,19 +431,19 @@
       console.log((sportEvent2004))
       console.log(sportEventCount2004)     
       
-      var trace1 = {
-        x: sportEvent2004,
-        y: sportEventCount2004 ,
-        type: "bar"
-      };
+      // var trace1 = {
+      //   x: sportEvent2004,
+      //   y: sportEventCount2004 ,
+      //   type: "bar"
+      // };
       
-      var data = [trace1];
+      // var data = [trace1];
       
-      var layout = {
-        title: "'Bar' Chart"
-      };
+      // var layout = {
+      //   title: "2004 USA Olympic Gold Medals"
+      // };
       
-      Plotly.newPlot("plot", data, layout);
+      // Plotly.newPlot("plot", data, layout);
 
       return wordFrequency2004;
     }
@@ -462,19 +482,19 @@
       console.log((sportEvent2008))
       console.log(sportEventCount2008)     
       
-      var trace1 = {
-        x: sportEvent2008,
-        y: sportEventCount2008 ,
-        type: "bar"
-      };
+      // var trace1 = {
+      //   x: sportEvent2008,
+      //   y: sportEventCount2008 ,
+      //   type: "bar"
+      // };
       
-      var data = [trace1];
+      // var data = [trace1];
       
-      var layout = {
-        title: "'Bar' Chart"
-      };
+      // var layout = {
+      //   title: "2008 USA Olympic Gold Medals"
+      // };
       
-      Plotly.newPlot("plot", data, layout);
+      // Plotly.newPlot("plot", data, layout);
 
       return wordFrequency2008;
     }
@@ -512,19 +532,19 @@
       console.log((sportEvent2016))
       console.log(sportEventCount2016)     
       
-      var trace1 = {
-        x: sportEvent2016,
-        y: sportEventCount2016 ,
-        type: "bar"
-      };
+      // var trace1 = {
+      //   x: sportEvent2016,
+      //   y: sportEventCount2016 ,
+      //   type: "bar"
+      // };
       
-      var data = [trace1];
+      // var data = [trace1];
       
-      var layout = {
-        title: "'Bar' Chart"
-      };
+      // var layout = {
+      //   title: "2016 USA Olympic Gold Medals"
+      // };
       
-      Plotly.newPlot("plot", data, layout);
+      // Plotly.newPlot("plot", data, layout);
 
       return wordFrequency2016;
     }
