@@ -1,12 +1,13 @@
 // Step 1: Set up our chart
 //= ================================
+
 var svgWidth = 900;
 var svgHeight = 500;
 
 var margin = {
-  top: 20,
-  right: 40,
-  bottom: 60,
+  top: 60,
+  right: 50,
+  bottom: 80,
   left: 50
 };
 
@@ -115,6 +116,39 @@ d3.csv("Resources/usaGoldMedals.csv").then(function(usaData) {
     .attr("d", line2)
     .classed("line red", true);
 
+  // append circles to data points
+  var circlesGroup = chartGroup.selectAll("circle")
+    .data(usaData)
+    .enter()
+    .append("circle")
+    .attr("cx", (d, i) => xTimeScale(i))
+    .attr("cy", d => yLinearScale(d.male))
+    .attr("r", "5")
+    .attr("fill", "blue");
+
+  var circlesGroup = chartGroup.selectAll("circle")
+    .data(usaData)
+    .enter()
+    .append("circle")
+    .attr("cx", (d, i) => xTimeScale(i))
+    .attr("cy", d => yLinearScale(d.female))
+    .attr("r", "5")
+    .attr("fill", "red");  
+
+  // Append a div to the body to create tooltips, assign it a class
+  var toolTip = d3.select("body").append("div")
+    .attr("class", "tooltip");
+    
+  circlesGroup.on("mouseover", function(d, i) {
+    toolTip.style("display", "block");
+    toolTip.html(`Athletes: <strong>${usaData[i]}</strong>`)
+      .style("left", d3.event.pageX + "px")
+      .style("top", d3.event.pageY + "px");
+  })  
+    .on("mouseout", function() {
+      toolTip.style("display", "none");
+    })
+
   // Add color coded titles to the x-axis
   chartGroup.append("text")
     .attr("transform", "rotate(-90)")
@@ -127,18 +161,19 @@ d3.csv("Resources/usaGoldMedals.csv").then(function(usaData) {
     // Position the text
     // Center the text:
     // (https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-anchor)
-    .attr("transform", `translate(${width / 2}, ${height + margin.top + 20})`)
+    .attr("transform", `translate(${width / 2}, ${height + margin.top})`)
     .attr("text-anchor", "middle")
     .attr("font-size", "16px")
     .attr("fill", "blue")
     .text("USA Male Gold Medal Athletes");
 
   chartGroup.append("text")
-    .attr("transform", `translate(${width / 2}, ${height + margin.top + 37})`)
+    .attr("transform", `translate(${width / 2}, ${height + margin.top + 20})`)
     .attr("text-anchor", "middle")
     .attr("font-size", "16px")
     .attr("fill", "red")
     .text("USA Female Gold Medal Athletes");
+  
 
 }).catch(function(error) {
   console.log(error);
