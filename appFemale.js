@@ -132,7 +132,6 @@ function makeResponsive() {
     .on("mouseout", function() {
       toolTip.style("display", "none");
     });
-
   })
 }
 

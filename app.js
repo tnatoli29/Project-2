@@ -174,7 +174,6 @@ d3.csv("Resources/usaGoldMedals.csv").then(function(usaData) {
     .attr("fill", "red")
     .text("USA Female Gold Medal Athletes");
   
-
 }).catch(function(error) {
   console.log(error);
 });

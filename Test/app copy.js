@@ -172,16 +172,10 @@ function makeResponsive() {
         .style("top", d3.event.pageY + "px");
     })
 
-
-
-
-
-
     // Add a onmouseout event to make the tooltip invisible
     .on("mouseout", function() {
       toolTip.style("display", "none");
     });
-
   })
 }
 
