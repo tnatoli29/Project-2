@@ -10,7 +10,7 @@ function init() {
 
     var years = data.map(d => d.year);
     var uniYears = [...new Set(years)];
-    //console.log(uniYears);
+   // console.log(uniYears);
 
     uniYears.forEach((sample) => {
       dropdown
@@ -35,8 +35,6 @@ function buildCharts(sample) {
 
     var female = data.filter(d => d.sex === "female").length;
     //console.log(female)
-
-
 
 
  var trace1 = {
