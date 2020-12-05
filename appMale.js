@@ -34,8 +34,8 @@ function makeResponsive() {
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
   // Import Data from the usaGoldMedals.csv file; this file represents USA Athletes Gold Medal winners
-  var maleCount = [56, 106, 49, 57, 59, 68, 51, 67, 40];
-  var femaleCount = [7, 62, 28, 32, 101, 62, 65, 58, 67];
+  //var maleCount = [56, 106, 49, 57, 59, 68, 51, 67, 40];
+  //var femaleCount = [7, 62, 28, 32, 101, 62, 65, 58, 67];
   d3.csv("Resources/usaGoldMedals.csv").then(function(usaData) {
 
     // Parse the data.
@@ -123,7 +123,7 @@ function makeResponsive() {
     // Add an onmouseover event to display a tooltip
     circlesGroup.on("mouseover", function(d, i) {
       toolTip.style("display", "block");
-      toolTip.html(`Male Gold Medals: <strong>${maleCount[i]}</strong>`)
+      toolTip.html(`Male Gold Medals: <strong>${d.male}</strong>`)
         .style("left", d3.event.pageX + "px")
         .style("top", d3.event.pageY + "px");
     })
