@@ -38,9 +38,9 @@ def welcome():
     return (
         f"Available Routes:<br/>"
         f"/api/v1.0/names<br/>"
+        f"/api/v1.0/sport<br/>"
         f"/api/v1.0/athletes"
     )
-
 
 @app.route("/api/v1.0/names")
 def names():
@@ -58,13 +58,28 @@ def names():
 
     return jsonify(all_names)
 
+@app.route("/api/v1.0/sport")
+def sport():
+        # Create our session (link) from Python to the DB
+    session = Session(engine)
+
+    """Return a list of all sport in the database"""
+    # Query all passengers
+    results = session.query(Athlete.sport).all()
+
+    session.close()
+
+    # Convert list of tuples into normal list
+    all_sports = list(np.ravel(results))
+
+    return jsonify(all_sports)
 
 @app.route("/api/v1.0/athletes")
 def athletes():
     # Create our session (link) from Python to the DB
     session = Session(engine)
 
-    """Return a list of athlete data including the name, sport, and sex of each athlete"""
+    """Return a list of athlete data including the year, sport, sex, nationality, medal, name of each athlete"""
     # Query all athletes
     results = session.query(Athlete.year, Athlete.sport, Athlete.sex, Athlete.nationality, Athlete.medal, Athlete.name).all()
 
