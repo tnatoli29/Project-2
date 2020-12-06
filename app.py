@@ -1,5 +1,5 @@
 import csv
-from flask import Flask, render_template, json, current_app as app
+from flask import Flask, render_template, json
 import os
 
 
@@ -19,7 +19,7 @@ with open(csvFilePath) as csvFile:
 with open(jsonFilePath, "w") as jsonFile:
     jsonFile.write(json.dumps(data, indent=4))     
 
-print(data)
+# print(data)
 
 
 
