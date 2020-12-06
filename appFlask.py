@@ -60,7 +60,7 @@ def names():
 
 
 @app.route("/api/v1.0/athletes")
-def passengers():
+def athletes():
     # Create our session (link) from Python to the DB
     session = Session(engine)
 
