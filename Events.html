@@ -10,7 +10,8 @@
 </head>
 <body>
     <div id="plot"></div>
-    <select id="selDataset">
+    <select id="selDataset"onchange="getData(this.value)">
+        <option value="All">Olympics All Years</option>
         <option value="1976">Olympics 1976</option>
         <option value="1984">Olympics 1984</option>
         <option value="1988">Olympics 1988</option>

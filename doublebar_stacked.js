@@ -2,7 +2,7 @@
 
 // function buildPlot(){
   d3.csv("./Resources/olympicscjb.csv").then(function(data) {
-    // console.log(data);
+    console.log(data);
 
     var years=data.map(data=>data.year)
     // console.log(years);
@@ -551,15 +551,13 @@
     x = sportEvent1984;
     y = sportEventCount1984;
    }
-
-  // Note the extra brackets around 'x' and 'y'
       Plotly.restyle("plot", "x", [x]);
       Plotly.restyle("plot", "y", [y]);
-    }
+   
 
 init();
 
 
 
 
-  })
+  }});
