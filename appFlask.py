@@ -1,13 +1,12 @@
 import numpy as np
-
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from sql_keys import username, password
-
 from flask import Flask, jsonify
 
+# Project 2 Olympic Gold Medal USA Athlete Winners
 
 #################################################
 # Database Setup
@@ -26,7 +25,6 @@ Athlete = Base.classes.athlete
 # Flask Setup
 #################################################
 app = Flask(__name__)
-
 
 #################################################
 # Flask Routes
@@ -48,7 +46,7 @@ def names():
     session = Session(engine)
 
     """Return a list of all athlete names"""
-    # Query all passengers
+    # Query all athlete names
     results = session.query(Athlete.name).all()
 
     session.close()
@@ -64,7 +62,7 @@ def sport():
     session = Session(engine)
 
     """Return a list of all sport in the database"""
-    # Query all passengers
+    # Query all Olympic sports
     results = session.query(Athlete.sport).all()
 
     session.close()
