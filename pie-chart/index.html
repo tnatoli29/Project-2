@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Basic Charts</title>
-  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -14,19 +14,26 @@
 </head>
 <body>
     <div id="plot"></div>
-    <select id="selDataset"></select>
+<!--    <select id="selDataset"></select>-->
 
-<!-- Add 2 buttons -->
+<!-- Add buttons -->
 <button onclick="update(data1)">Olympics 1976</button>
 <button onclick="update(data2)">Olympics 1984</button>
+<button onclick="update(data3)">Olympics 1988</button>
+<button onclick="update(data4)">Olympics 1992</button>
+<button onclick="update(data5)">Olympics 1996</button>
+<button onclick="update(data6)">Olympics 2000</button>
+<button onclick="update(data7)">Olympics 2004</button>
+<button onclick="update(data8)">Olympics 2008</button>
+<button onclick="update(data9)">Olympics 2016</button>
 
-<!-- Create a div where the graph will take place -->
+    <!-- Create a div where the graph will take place-->
 <div id="my_dataviz"></div>
 
 <!--<script src="plots.js"></script>-->
     <script src="testplot.js"></script>
 <!--<script src="style.css"></script>-->
- <script src="jsonStuff.js"></script>
+<!-- <script src="jsonStuff.js"></script>-->
 
 
 
