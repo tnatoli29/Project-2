@@ -4,7 +4,7 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from sql_keys import username, password
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 
 # Project 2 Olympic Gold Medal USA Athlete Winners
 
@@ -37,7 +37,8 @@ def welcome():
         f"Available Routes:<br/>"
         f"/api/v1.0/names<br/>"
         f"/api/v1.0/sport<br/>"
-        f"/api/v1.0/athletes"
+        f"/api/v1.0/athletes<br/>"
+    
     )
 
 @app.route("/api/v1.0/names")
@@ -96,6 +97,8 @@ def athletes():
         all_athletes.append(olympic_dict)
 
     return jsonify(all_athletes)
+
+
 
 
 if __name__ == '__main__':
