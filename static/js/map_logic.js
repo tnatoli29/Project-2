@@ -37,7 +37,7 @@ L.control.layers(defaultMaps, overlayMaps, {
   collapsed: false
 }).addTo(olympicMap);
 
-// Enter each name of the place, longitude, latitude, and a year for each Olympics in the array.
+// Save each name of the place, longitude, latitude, and a year for each Olympics in the array.
 var placeOlympics = [
   {
     name: "Rio, Brazil",
