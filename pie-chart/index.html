@@ -14,24 +14,22 @@
 </head>
 <body>
     <div id="plot"></div>
-<!--    <select id="selDataset"></select>-->
 
-<!-- Add buttons -->
-<button onclick="update(data1)">Olympics 1976</button>
-<button onclick="update(data2)">Olympics 1984</button>
-<button onclick="update(data3)">Olympics 1988</button>
-<button onclick="update(data4)">Olympics 1992</button>
-<button onclick="update(data5)">Olympics 1996</button>
-<button onclick="update(data6)">Olympics 2000</button>
-<button onclick="update(data7)">Olympics 2004</button>
-<button onclick="update(data8)">Olympics 2008</button>
-<button onclick="update(data9)">Olympics 2016</button>
 
-    <!-- Create a div where the graph will take place-->
-<div id="my_dataviz"></div>
+<select id="selDataset" onchange="getData(this.value)">
+        <option value="olympics1976">1976</option>
+        <option value="olympics1984">1984</option>
+        <option value="olympics1988">1988</option>
+        <option value="olympics1992">1992</option>
+        <option value="olympics1996">1996</option>
+        <option value="olympics2000">2000</option>
+        <option value="olympics2004">2004</option>
+        <option value="olympics2008">2008</option>
+        <option value="olympics2016">2016</option>
+    </select>
+  <div id="pie"></div>
 
-<!--<script src="plots.js"></script>-->
-    <script src="testplot.js"></script>
+<script src="plots.js"></script>
 <!--<script src="style.css"></script>-->
 <!-- <script src="jsonStuff.js"></script>-->
 
