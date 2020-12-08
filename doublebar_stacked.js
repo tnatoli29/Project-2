@@ -10,9 +10,9 @@
   
     var sport=data.map(data=>data.sport)
 
-    const female= data.filter(d=>d.sex==="female")
+    // const female= data.filter(d=>d.sex==="female")
 
-    const male= data.filter(d=>d.sex==="male")
+    // const male= data.filter(d=>d.sex==="male")
 
     
    
@@ -520,44 +520,44 @@
 
 
     // Initializes the page with a default plot
-    function init() {
-      dog = [{
-      x: sportEventsAll,
-      y: sportEventCountAll}];
+//     function init() {
+//       dog = [{
+//       x: sportEventsAll,
+//       y: sportEventCountAll}];
 
-      Plotly.newPlot("plot", dog);
-      }
+//       Plotly.newPlot("plot", dog);
+//       }
 
-    // Call updatePlotly() when a change takes place to the DOM
-      d3.selectAll("#selDataset").on("change", updatePlotly);
+//     // Call updatePlotly() when a change takes place to the DOM
+//       d3.selectAll("#selDataset").on("change", updatePlotly);
 
-    // This function is called when a dropdown menu item is selected
-    function updatePlotly() {
-    // Use D3 to select the dropdown menu
-    var dropdownMenu = d3.select("#selDataset");
-    // Assign the value of the dropdown menu option to a variable
-    var dataset = dropdownMenu.property("value");
+//     // This function is called when a dropdown menu item is selected
+//     function updatePlotly() {
+//     // Use D3 to select the dropdown menu
+//     var dropdownMenu = d3.select("#selDataset");
+//     // Assign the value of the dropdown menu option to a variable
+//     var dataset = dropdownMenu.property("value");
 
-    // Initialize x and y arrays
-    var x = [];
-    var y = [];
+//     // Initialize x and y arrays
+//     var x = [];
+//     var y = [];
 
-    if (dataset === '1976') {
-    x = sportEvent1976
-    y = sportEventCount1976;
-   }
+//     if (dataset === '1976') {
+//     x = sportEvent1976
+//     y = sportEventCount1976;
+//    }
 
-    if (dataset === '1984') {
-    x = sportEvent1984;
-    y = sportEventCount1984;
-   }
-      Plotly.restyle("plot", "x", [x]);
-      Plotly.restyle("plot", "y", [y]);
+//     if (dataset === '1984') {
+//     x = sportEvent1984;
+//     y = sportEventCount1984;
+//    }
+//       Plotly.restyle("plot", "x", [x]);
+//       Plotly.restyle("plot", "y", [y]);
    
 
-init();
+// init();
 
 
 
 
-  }});
+  });

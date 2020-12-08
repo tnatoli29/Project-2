@@ -1,5 +1,7 @@
 body {
     font-family: "Lato", sans-serif;
+    /* background: grey; */
+    /* background-image: url("https://pbs.twimg.com/profile_images/573245641846988800/p1_68JCY.png"); */
   }
   
 .sidebar {
@@ -61,6 +63,7 @@ body {
   .grid-item{
       padding-left: 150px; 
       padding-top: 40px;
+    
   }
 
   .team{
@@ -68,3 +71,12 @@ body {
     font-weight: bold;
     font-family: Tahoma;
   }
+
+  .cat{
+  width: 400px;
+  height: 400px;
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  /* background: #73AD21; */
+  }
+
