@@ -41,10 +41,31 @@
     </div>
     <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 600 }'>
         <div class="grid-item">
-            <img src="https://pbs.twimg.com/profile_images/573245641846988800/p1_68JCY.png" width="200" height="200" alt="" loading="lazy">  
+<!--            <img src="https://pbs.twimg.com/profile_images/573245641846988800/p1_68JCY.png" width="200" height="200" alt="" loading="lazy">  -->
         </div>
-        <div class="grid-item">
-            <img src="https://pbs.twimg.com/profile_images/573245641846988800/p1_68JCY.png" width="200" height="200" alt="" loading="lazy">
+        <div>
+
+           <div class="grid-item">
+          <div id="tomplot">
+
+
+    <select id="tomselDataset" onchange="getData(this.value)">
+        <option value="olympics1976">1976</option>
+        <option value="olympics1984">1984</option>
+        <option value="olympics1988">1988</option>
+        <option value="olympics1992">1992</option>
+        <option value="olympics1996">1996</option>
+        <option value="olympics2000">2000</option>
+        <option value="olympics2004">2004</option>
+        <option value="olympics2008">2008</option>
+        <option value="olympics2016">2016</option>
+    </select>
+    </div>
+  <div id="pie"></div>
+
+      </div>
+
+      </div>
         </div>
         <div class="grid-item">
           <div id="plot" class="cat "></div>
@@ -71,7 +92,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
     <!-- <script src="plot.js"></script> -->
     <!-- <script src="plot.js"></script> -->
-    <!-- <script src="plot.js"></script> -->
+     <script src="pieplots.js"></script>
     <script src="barchart.js"></script>
     <script src="sidebar.js"></script>
 
