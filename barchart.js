@@ -1,6 +1,4 @@
 
-
-
 function buildPlot(){
   d3.csv("./Resources/olympicscjb.csv").then(function(data) {
    // console.log(data);
