@@ -6,14 +6,10 @@ function buildPlot(){
    // console.log(data);
     // console.log(years);  
     var sport=data.map(data=>data.sport)
-
-    function allYears(myString) {
+    var wordFrequencyAll = {};
+    function allYears() {
       // Convert string to an array of words
       var arrayAllyrs = sport
-    
-      // An object to hold word frequency
-      var wordFrequencyAll = {};
-    
       // Iterate through the array
       for (var i = 0; i < arrayAllyrs.length; i++) {
         var currentWordAll = arrayAllyrs[i];
@@ -35,14 +31,18 @@ function buildPlot(){
       return wordFrequencyAll;
       // console.log(wordFrequencyAll);
     }
-    allYears("All");
-   
+    allYears();
+    var sportEventsAll = Object.keys(wordFrequencyAll);
+    var sportEventCountAll= Object.values(wordFrequencyAll);
+    console.log((sportEventsAll))
+    console.log(sportEventCountAll)
+
     const olympics_1976=data.filter(d=>d.year==="1976");
     var sport_1976=olympics_1976.map(data=>data.sport)
     // console.log(sport_1976)
 
     var wordFrequency1976 = {};
-    function arrayYear1976(myString) {
+    function arrayYear1976() {
       // Convert string to an array of words
       var stringArray1976 = sport_1976
     
@@ -69,9 +69,8 @@ function buildPlot(){
       // console.log(sportEventCount1976)     
       return wordFrequency1976;
     }
-    arrayYear1976("1976");
+    arrayYear1976();
     
-
     var sportEvent1976 = Object.keys(wordFrequency1976);
     var sportEventCount1976= Object.values(wordFrequency1976);
     console.log((sportEvent1976))
@@ -84,13 +83,9 @@ function buildPlot(){
    
     var wordFrequency1984 = {};
    
-    function arrayYear1984(myString) {
+    function arrayYear1984() {
       // Convert string to an array of words
       var stringArray1984 = sport_1984
-    
-      // An object to hold word frequency
-      // var wordFrequency1984 = {};
-
       // Iterate through the array
       for (var i = 0; i < stringArray1984.length; i++) {
         var currentWord1984 = stringArray1984[i];
@@ -107,7 +102,7 @@ function buildPlot(){
       // console.log(wordFrequency1984);    
       return wordFrequency1984;
     }
-    arrayYear1984("1984");
+    arrayYear1984();
 
     var sportEvent1984 = Object.keys(wordFrequency1984);
     var sportEventCount1984= Object.values(wordFrequency1984);
@@ -120,13 +115,10 @@ function buildPlot(){
 
    var wordFrequency1988 = {};
 
-    function arrayYear1988(myString) {
+    function arrayYear1988() {
       // Convert string to an array of words
       var stringArray1988 = sport_1988
-    
-      // An object to hold word frequency
-      // var wordFrequency1988 = {};
-    
+
       // Iterate through the array
       for (var i = 0; i < stringArray1988.length; i++) {
         var currentWord1988 = stringArray1988[i];
@@ -143,7 +135,7 @@ function buildPlot(){
       // console.log(wordFrequency1988);  
       return wordFrequency1988;
     }
-    arrayYear1988("1988");
+    arrayYear1988();
 
     var sportEvent1988 = Object.keys(wordFrequency1988);
     var sportEventCount1988= Object.values(wordFrequency1988);
@@ -153,12 +145,12 @@ function buildPlot(){
     const olympics_1992=data.filter(d=>d.year==="1992");
     var sport_1992=olympics_1992.map(data=>data.sport)
     // console.log(sport_1992)
-    function arrayYear1992(myString) {
+
+    var wordFrequency1992 = {};
+
+    function arrayYear1992() {
       // Convert string to an array of words
       var stringArray1992 = sport_1992
-    
-      // An object to hold word frequency
-      var wordFrequency1992 = {};
     
       // Iterate through the array
       for (var i = 0; i < stringArray1992.length; i++) {
@@ -180,18 +172,22 @@ function buildPlot(){
       // console.log(sportEventCount1992)     
       return wordFrequency1992;
     }
-    arrayYear1992("1992");
+    arrayYear1992();
+
+    var sportEvent1992 = Object.keys(wordFrequency1992);
+    var sportEventCount1992= Object.values(wordFrequency1992);
+    console.log((sportEvent1992))
+    console.log(sportEventCount1992)     
 
     const olympics_1996=data.filter(d=>d.year==="1996");
     var sport_1996=olympics_1996.map(data=>data.sport)
     // console.log(sport_1996)
 
-    function arrayYear1996(myString) {
+    var wordFrequency1996 = {};
+
+    function arrayYear1996() {
       // Convert string to an array of words
       var stringArray1996 = sport_1996
-    
-      // An object to hold word frequency
-      var wordFrequency1996 = {};
     
       // Iterate through the array
       for (var i = 0; i < stringArray1996.length; i++) {
@@ -206,26 +202,26 @@ function buildPlot(){
           wordFrequency1996[currentWord1996] = 1;
         }
       }
-      // console.log(wordFrequency1996);
-      var sportEvent1996 = Object.keys(wordFrequency1996);
-      var sportEventCount1996= Object.values(wordFrequency1996);
-      // console.log((sportEvent1996))
-      // console.log(sportEventCount1996)     
+      // console.log(wordFrequency1996);  
       return wordFrequency1996;
     }
-    arrayYear1996("1996");
+    arrayYear1996();
     
+    var sportEvent1996 = Object.keys(wordFrequency1996);
+    var sportEventCount1996= Object.values(wordFrequency1996);
+    console.log((sportEvent1996))
+    console.log(sportEventCount1996)   
+   
+   
     const olympics_2000=data.filter(d=>d.year==="2000");
     var sport_2000=olympics_2000.map(data=>data.sport)
     // console.log(sport_2000)
 
-    function arrayYear2000(myString) {
+    var wordFrequency2000 = {};
+
+    function arrayYear2000() {
       // Convert string to an array of words
       var stringArray2000 = sport_2000
-    
-      // An object to hold word frequency
-      var wordFrequency2000 = {};
-    
       // Iterate through the array
       for (var i = 0; i < stringArray2000.length; i++) {
         var currentWord2000 = stringArray2000[i];
@@ -246,19 +242,22 @@ function buildPlot(){
       // console.log(sportEventCount2000)     
       return wordFrequency2000;
     }
-    arrayYear2000("2000");
+    arrayYear2000();
+
+    var sportEvent2000 = Object.keys(wordFrequency2000);
+    var sportEventCount2000= Object.values(wordFrequency2000);
+    console.log((sportEvent2000))
+    console.log(sportEventCount2000)  
 
     const olympics_2004=data.filter(d=>d.year==="2004");
     var sport_2004=olympics_2004.map(data=>data.sport)
     // console.log(sport_2004)
 
-    function arrayYear2004(myString) {
+    var wordFrequency2004 = {};
+    
+    function arrayYear2004() {
       // Convert string to an array of words
       var stringArray2004 = sport_2004
-    
-      // An object to hold word frequency
-      var wordFrequency2004 = {};
-    
       // Iterate through the array
       for (var i = 0; i < stringArray2004.length; i++) {
         var currentWord2004 = stringArray2004[i];
@@ -273,13 +272,15 @@ function buildPlot(){
         }
       }
       // console.log(wordFrequency2004);
-      var sportEvent2004 = Object.keys(wordFrequency2004);
-      var sportEventCount2004= Object.values(wordFrequency2004);
-      // console.log((sportEvent2004))
-      // console.log(sportEventCount2004)     
-      return wordFrequency2004;
+         
+  return wordFrequency2004;
     }
-    arrayYear2004("2004");
+    arrayYear2004();
+
+    var sportEvent2004 = Object.keys(wordFrequency2004);
+    var sportEventCount2004= Object.values(wordFrequency2004);
+    console.log((sportEvent2004))
+    console.log(sportEventCount2004)  
 
     const olympics_2008=data.filter(d=>d.year==="2008");
     var sport_2008=olympics_2008.map(data=>data.sport)
@@ -290,10 +291,6 @@ function buildPlot(){
     function arrayYear2008() {
       // Convert string to an array of words
       var stringArray2008 = sport_2008
-    
-      // An object to hold word frequency
-      // var wordFrequency2008 = {};
-    
       // Iterate through the array
       for (var i = 0; i < stringArray2008.length; i++) {
         var currentWord2008 = stringArray2008[i];
@@ -307,14 +304,15 @@ function buildPlot(){
           wordFrequency2008[currentWord2008] = 1;
         }
       }
-      // console.log(wordFrequency2008);
-      // var sportEvent2008 = Object.keys(wordFrequency2008);
-      // var sportEventCount2008= Object.values(wordFrequency2008);
-      // console.log((sportEvent2008))
-      // console.log(sportEventCount2008)     
+      // console.log(wordFrequency2008);   
       return wordFrequency2008;
     }
-    arrayYear2008("2008");
+    arrayYear2008();
+
+ var sportEvent2008 = Object.keys(wordFrequency2008);
+ var sportEventCount2008= Object.values(wordFrequency2008);
+ console.log((sportEvent2008))
+ console.log(sportEventCount2008) 
 
     const olympics_2016=data.filter(d=>d.year==="2016");
     var sport_2016=olympics_2016.map(data=>data.sport)
@@ -326,10 +324,6 @@ function buildPlot(){
 
       // Convert string to an array of words
       var stringArray2016 = sport_2016
-    
-      // An object to hold word frequency
-      // var wordFrequency2016 = {};
-    
       // Iterate through the array
       for (var i = 0; i < stringArray2016.length; i++) {
         var currentWord2016 = stringArray2016[i];
@@ -343,15 +337,10 @@ function buildPlot(){
           wordFrequency2016[currentWord2016] = 1;
         }
       }
-      // console.log(wordFrequency2016);
-      // var sportEvent2016 = Object.keys(wordFrequency2016);
-      // var sportEventCount2016= Object.values(wordFrequency2016);
-      // console.log((sportEvent2016))
-      // console.log(sportEventCount2016)     
+      // console.log(wordFrequency2016); 
       return wordFrequency2016;
     }
     arrayYear2016();
-
 
     console.log(wordFrequency2016)
     var sportEvent2016 = Object.keys(wordFrequency2016);
@@ -388,10 +377,41 @@ function buildPlot(){
         x = sportEvent1976;
         y = sportEventCount1976;
       }
-    
+      if (dataset === 'All') {
+        x = sportEventsAll;
+        y = sportEventCountAll;
+      }
       if (dataset === '1984') {
         x = sportEvent1984;
         y = sportEventCount1984;
+      }
+      if (dataset === '1988') {
+        x = sportEvent1988;
+        y = sportEventCount1988;
+      }
+      if (dataset === '1992') {
+        x = sportEvent1992;
+        y = sportEventCount1992;
+      }
+      if (dataset === '1996') {
+        x = sportEvent1996;
+        y = sportEventCount1996;
+      }
+      if (dataset === '2000') {
+        x = sportEvent2000;
+        y = sportEventCount2000;
+      }
+      if (dataset === '2004') {
+        x = sportEvent2004;
+        y = sportEventCount2004;
+      }
+      if (dataset === '2008') {
+        x = sportEvent2008;
+        y = sportEventCount2008;
+      }
+      if (dataset === '2016') {
+        x = sportEvent2016;
+        y = sportEventCount2016;
       }
     
       // Note the extra brackets around 'x' and 'y'
