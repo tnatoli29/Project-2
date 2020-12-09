@@ -68,3 +68,30 @@ body {
     font-weight: bold;
     font-family: Tahoma;
   }
+
+  
+  .line {
+    fill: none;
+    stroke-width: 2px;
+  }
+  
+  .red {
+    stroke: red;
+  }
+  
+  .blue {
+    stroke: blue;
+  }
+   
+  .tooltip {
+    display: none;
+    position: absolute;
+    width: 140px;
+    height: 15px;
+    padding: 2px;
+    font: 12px sans-serif;
+    text-align: center;
+    background: rgb(255, 238, 0);
+    border: 0;
+    border-radius: 10px;
+  }
