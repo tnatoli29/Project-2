@@ -1,7 +1,7 @@
 # Project 2 : World Olympic Map 1976 - 2016
 ### Part 3: Mapping the Olympic Data
 
-![webDashboard\map-screenshot.PNG](webDashboard\map-screenshot.PNG)
+![map-screenshot.PNG](webDashboard\map-screenshot.PNG)
 
 Shows a summary analysis for World Olympic Games from 1976 to 2016. 
 Each flags indicates each countries. 
