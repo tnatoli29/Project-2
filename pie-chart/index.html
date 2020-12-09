@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Basic Charts</title>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="plot">
+
+
+    <select id="selDataset" onchange="getData(this.value)">
+        <option value="olympics1976">1976</option>
+        <option value="olympics1984">1984</option>
+        <option value="olympics1988">1988</option>
+        <option value="olympics1992">1992</option>
+        <option value="olympics1996">1996</option>
+        <option value="olympics2000">2000</option>
+        <option value="olympics2004">2004</option>
+        <option value="olympics2008">2008</option>
+        <option value="olympics2016">2016</option>
+    </select>
+    </div>
+  <div id="pie"></div>
+
+
+<script src="plots.js"></script>
+<!--<script src="style.css"></script>-->
+<!-- <script src="jsonStuff.js"></script>-->
+
+
+
+
+</body>
+</html>
