@@ -59,6 +59,7 @@ function init() {
     marker:{
         colors: ["#193050", "#e62e00"]
      },
+    textinfo: "label+percent+value",
     type: "pie"
 
   }];
@@ -70,14 +71,14 @@ function init() {
 
  Plotly.newPlot("pie", data, layout);
 }
-d3.selectAll("#selDataset").on("change", getData);
+d3.selectAll("#tomselDataset").on("change", getData);
 
 // Function called by DOM changes
 function getData() {
 
     // On change to the DOM, call getData()
 
-  var dropdownMenu = d3.select("#selDataset");
+  var dropdownMenu = d3.select("#tomselDataset");
   var dataNumbers = dropdownMenu.property("value");
   // Assign the value of the dropdown menu option to a variable
 

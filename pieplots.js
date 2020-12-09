@@ -59,6 +59,8 @@ function init() {
     marker:{
         colors: ["#193050", "#e62e00"]
      },
+//    textinfo: "label+percent+value",
+//    textposition: "outside",
     type: "pie"
 
   }];
