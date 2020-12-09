@@ -36,7 +36,7 @@ function makeResponsive() {
   // Import Data from the usaGoldMedals.csv file; this file represents USA Athletes Gold Medal winners
   //var maleCount = [56, 106, 49, 57, 59, 68, 51, 67, 40];
   //var femaleCount = [7, 62, 28, 32, 101, 62, 65, 58, 67];
-  d3.csv("/Resources/usaGoldMedals.csv").then(function(usaData) {
+  d3.csv("/Resources_cm/usaGoldMedals.csv").then(function(usaData) {
 
     // Parse the data.
     // Format the Year and convert to numerical and date values
@@ -59,7 +59,7 @@ function makeResponsive() {
 
     // Set up the y-axis domain
     // Find the max of the male data
-    var maleMax = d3.max(usaData, d => d.male);
+    var maleMax = d3.max(usaData, d => d.female);
 
     // Use the maleMax value to set the yLinearScale domain
     yLinearScale.domain([0, maleMax]);
@@ -80,13 +80,13 @@ function makeResponsive() {
     // Line generator for male data
     var line1 = d3.line()
       .x(d => xTimeScale(d.year))
-      .y(d => yLinearScale(d.male));
+      .y(d => yLinearScale(d.female));
 
     // Append a path for male line plot
     chartGroup
       .append("path")
       .attr("d", line1(usaData))
-      .classed("line blue", true);
+      .classed("line red", true);
 
     // Append circles to data points
     var circlesGroup = chartGroup.selectAll("circle")
@@ -94,9 +94,9 @@ function makeResponsive() {
       .enter()
       .append("circle")
       .attr("cx", d => xTimeScale(d.year))
-      .attr("cy", d => yLinearScale(d.male))
+      .attr("cy", d => yLinearScale(d.female))
       .attr("r", "5")
-      .attr("fill", "blue")
+      .attr("fill", "red")
 
       // Add color coded titles to the x-axis
     chartGroup.append("text")
@@ -113,8 +113,8 @@ function makeResponsive() {
       .attr("transform", `translate(${width / 2}, ${height + margin.top + 20})`)
       .attr("text-anchor", "middle")
       .attr("font-size", "16px")
-      .attr("fill", "blue")
-      .text("USA Male Gold Medal Athletes");
+      .attr("fill", "red")
+      .text("USA Female Gold Medal Athletes");
 
     // Append a div to the body to create tooltips, assign it a class
     var toolTip = d3.select("body").append("div")
@@ -123,7 +123,7 @@ function makeResponsive() {
     // Add an onmouseover event to display a tooltip
     circlesGroup.on("mouseover", function(d, i) {
       toolTip.style("display", "block");
-      toolTip.html(`Male Gold Medals: <strong>${d.male}</strong>`)
+      toolTip.html(`Female Gold Medals: <strong>${d.female}</strong>`)
         .style("left", d3.event.pageX + "px")
         .style("top", d3.event.pageY + "px");
     })
