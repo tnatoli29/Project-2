@@ -9,12 +9,6 @@
 
   
     var sport=data.map(data=>data.sport)
-//   var uniqueSports = sportsUnique(sport);
-  // console.log(uniqueSports);
-    
-    
- 
-    // var sex = data.map(data=>data.sex)
 
     const female= data.filter(d=>d.sex==="female")
 
