@@ -64,8 +64,8 @@ function init() {
   }];
 
     var layout = {
-     height: 400,
-     width: 400
+     height: 450,
+     width: 450
 
   };
 
@@ -120,7 +120,7 @@ function updatePlotly(newdata) {
   Plotly.restyle("pie", "values",[newdata]);
 }
 
-console.log(getData)
+//console.log(getData)
 init();
 
 });

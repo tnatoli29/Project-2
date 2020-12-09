@@ -30,7 +30,7 @@ var chartGroup = svg.append("g")
 // Step 3:
 // Import data from the usaGoldMedals.csv file; this file represents USA Athletes Gold Medal winners
 // =================================
-d3.csv("/Resources/usaGoldMedals.csv").then(function(usaData) {
+d3.csv("Resources/usaGoldMedals.csv").then(function(usaData) {
   // Step 4: Parse the data
   // Format the data and convert to numerical and date values
   // =================================
