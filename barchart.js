@@ -340,7 +340,11 @@ function buildPlot(){
         type: "bar"
        }];
     
-      Plotly.newPlot("plot", data);
+      
+       layout={
+         title:"USA Olympic Gold Medals by Sport (1976-2016)"
+       }
+      Plotly.newPlot("plot", data, layout);
     }
     
     // Call updatePlotly() when a change takes place to the DOM
@@ -356,10 +360,12 @@ function buildPlot(){
       // Initialize x and y arrays
       var x = [];
       var y = [];
+      var title=[];
     
       if (dataset === '1976') {
         x = sportEvent1976;
         y = sportEventCount1976;
+        title="Olympic Gold Medals 1976"
       }
       if (dataset === 'All') {
         x = sportEventsAll;
@@ -401,6 +407,7 @@ function buildPlot(){
       // Note the extra brackets around 'x' and 'y'
       Plotly.restyle("plot", "x", [x]);
       Plotly.restyle("plot", "y", [y]);
+      Plotly.restyle("plot", "title", [title]);
     }
     
     init();

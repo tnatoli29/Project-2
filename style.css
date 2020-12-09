@@ -76,8 +76,8 @@ body {
   .cat{
   width: 500px;
   height: 500px;
-  border-radius: 25px;
-  border: 2px solid  #193050;;
+  /* border-radius: 25px; */
+  /* border: 2px solid  #193050;; */
   /* background: #73AD21; */
   }
 
