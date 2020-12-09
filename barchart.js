@@ -337,7 +337,9 @@ function buildPlot(){
       data = [{
         x: sportEvent2016,
         y: sportEventCount2016,
-        type: "bar"
+        type: "bar",
+        marker:{color: '#193050'}
+
        }];
     
       
