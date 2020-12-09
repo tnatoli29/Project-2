@@ -138,7 +138,44 @@ body {
   border-radius: 10px;
 }
 
+<<<<<<< HEAD .cat {
+  width: 450px;
+  height: 400px;
+}
+
 .cat {
   width: 450px;
   height: 400px;
+}
+
+.table {
+  border-collapse: collapse;
+  border: 2px black solid;
+  font: 12px sans-serif;
+}
+
+.td {
+  border: 1px black solid;
+  padding: 5px;
+}
+
+.dataHead {
+  text-align: center;
+}
+
+.dataSub {
+  text-align: center;
+}
+
+.dataframe {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
+  background-color: #193050;
+  color: #ffffff
+}
+
+.grid-itemTom {
+  padding-left: 100px;
+  padding-top: 20px;
 }

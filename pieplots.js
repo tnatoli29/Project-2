@@ -66,6 +66,7 @@ function init() {
     var layout = {
      height: 500,
      width: 500
+
   };
 
  Plotly.newPlot("pie", data, layout);
