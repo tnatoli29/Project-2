@@ -13,6 +13,8 @@ app = flask.Flask(__name__, static_url_path="/static")
 def my_maps():
 
   return render_template('map_index.html',
+
+        # Import api keys for the mapbox for loading.
         mapbox_access_token=mapbox_access_token)
 
 if __name__ == '__main__':
