@@ -6,7 +6,7 @@ body, html {
 
 /* The hero image */
 .hero-image {
-    background-image: linear-gradient(rgba(65, 65, 65, 0.5), rgba(65, 65, 65, 0.5)), url("america-flag.jpg");
+    background-image: linear-gradient(rgba(65, 65, 65, 0.5), rgba(65, 65, 65, 0.5)), url("/webDashboard/ey_credits/ey_america-flag.jpg");
     height: 50%;
     padding-top: 450px;
     background-position: center;
