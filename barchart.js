@@ -22,10 +22,6 @@ function buildPlot(){
         }
       }
       // console.log(wordFrequencyAll);
-      var sportEventsAll = Object.keys(wordFrequencyAll);
-      var sportEventCountAll= Object.values(wordFrequencyAll);
-      // console.log((sportEventsAll))
-      // console.log(sportEventCountAll)
       return wordFrequencyAll;
       // console.log(wordFrequencyAll);
     }
@@ -43,10 +39,6 @@ function buildPlot(){
     function arrayYear1976() {
       // Convert string to an array of words
       var stringArray1976 = sport_1976
-    
-      // An object to hold word frequency
-      // var wordFrequency1976 = {};
-    
       // Iterate through the array
       for (var i = 0; i < stringArray1976.length; i++) {
         var currentWord1976 = stringArray1976[i];

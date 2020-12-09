@@ -96,11 +96,7 @@ def athletes():
         olympic_dict["name"] = name
         all_athletes.append(olympic_dict)
 
-
     return jsonify(all_athletes)
-
-
-
 
 
 if __name__ == '__main__':
