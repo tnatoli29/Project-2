@@ -75,8 +75,9 @@ body {
   }
 
   .grid-item{
-      padding-left: 100px; 
+      padding-left: 30px; 
       padding-top: 40px;
+      padding-right:-20px;
   }
 
   .team{
@@ -113,8 +114,8 @@ body {
   }
 
   .cat{
-    width: 450px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     }
   .table {
     border-collapse: collapse;
@@ -144,7 +145,7 @@ body {
  }
 
 .grid-itemTom{
-      padding-left: 100px;
+      padding-left: 50px;
       padding-top: 20px;
   }
   h4{
@@ -158,3 +159,9 @@ body {
    margin-left: 50px;
  }
 
+.grid-itemc{
+  padding-left: 840px;
+  padding-top: 40px;
+  /* position: absolute */
+  /* padding-right:20px */
+}
