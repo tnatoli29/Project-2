@@ -328,6 +328,8 @@ function buildPlot(){
       var sportEventCount2016= Object.values(wordFrequency2016);
       console.log((sportEvent2016))
         console.log(sportEventCount2016)  
+
+
   
       // use added numbers
       function init() {
