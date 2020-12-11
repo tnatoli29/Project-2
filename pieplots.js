@@ -66,8 +66,8 @@ function init() {
   }];
 
     var layout = {
-     height: 450,
-     width: 450
+     height: 300,
+     width: 300
 
   };
 
