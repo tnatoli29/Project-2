@@ -42,53 +42,63 @@ var placeOlympics = [
   {
     name: "Rio, Brazil",
     location: [-22.9068, -43.1729],
-    year: 2016
+    year: 2016,
+    link: "https://www.olympic.org/rio-2016"
 
   },
   {
     name: "Beijing, China",
     location: [39.9042, 116.4074],
-    year: 2008
+    year: 2008,
+    link: "https://www.olympic.org/beijing-2008"
   },
   {
     name: "Athens, Greece",
     location: [37.9838, 23.7275],
-    year: 2004
+    year: 2004,
+    link: "https://www.olympic.org/athens-2004"
   },
   {
     name: "Sydney, Australia",
     location: [-33.8688, 151.2093],
-    year: 2000
+    year: 2000,
+    link: "https://www.olympic.org/sydney-2000"
   },
   {
     name: "Atlanta, USA",
     location: [33.7490, -84.3880],
-    year: 1996
+    year: 1996,
+    link: "https://www.olympic.org/atlanta-1996"
   },
   {
     name: "Barcelona, Spain",
     location: [41.3851, 2.1734],
-    year: 1992
+    year: 1992,
+    link: "https://www.olympic.org/barcelona-1992"
   },
   {
     name: "Seoul, South Korea",
     location: [37.5665, 126.9780],
-    year: 1988
+    year: 1988,
+    link: "https://www.olympic.org/seoul-1988"
   },
   {
     name: "Los Angeles, USA",
     location: [34.0522, -118.2437],
-    year: 1984
+    year: 1984,
+    link: "https://www.olympic.org/los-angeles-1984"
   },
   {
     name: "Moscow, Russia",
     location: [55.7558, 37.6173],
-    year: 1980
+    year: 1980,
+    link: "https://www.olympic.org/moscow-1980"
   },
   {
     name: "Montreal, Canada",
     location: [45.5017, -73.5673],
-    year: 1976
+    year: 1976,
+    link: "https://www.olympic.org/montreal-1976"
   }
 ];
 
@@ -139,69 +149,79 @@ for (var i = 0; i < placeOlympics.length; i++) {
   L.marker(placeOlympics[0].location, { icon: brazilFlag })
     .addTo(olympicMap)
     .bindPopup("<h4>Olympic Location: " + placeOlympics[0].name + "</h4>" +
-      "<hr><h4>Olympic Year: " + placeOlympics[0].year + "</h4>")
+      "<hr><h4>Olympic Year: " + placeOlympics[0].year + "</h4>" + 
+      "<h4>Olympic Link: " + placeOlympics[0].link + "</h4>")
     .addTo(olympicMap);
 
   // Add China Flag Icon 
   L.marker(placeOlympics[1].location, { icon: ChinaFlag })
     .addTo(olympicMap)
     .bindPopup("<h4>Olympic Location: " + placeOlympics[1].name + "</h4>" +
-      "<hr><h4>Olympic Year: " + placeOlympics[1].year + "</h4>")
+      "<hr><h4>Olympic Year: " + placeOlympics[1].year + "</h4>" + 
+      "<h4>Olympic Link: " + placeOlympics[1].link + "</h4>")
     .addTo(olympicMap);
 
   // Add Greece Flag Icon 
   L.marker(placeOlympics[2].location, { icon: GreeceFlag })
     .addTo(olympicMap)
     .bindPopup("<h4>Olympic Location: " + placeOlympics[2].name + "</h4>" +
-      "<hr><h4>Olympic Year: " + placeOlympics[2].year + "</h4>")
+      "<hr><h4>Olympic Year: " + placeOlympics[2].year + "</h4>" + 
+      "<h4>Olympic Link: " + placeOlympics[2].link + "</h4>")
     .addTo(olympicMap);
 
   // Add Australia Flag Icon 
   L.marker(placeOlympics[3].location, { icon: AustraliaFlag })
     .addTo(olympicMap)
     .bindPopup("<h4>Olympic Location: " + placeOlympics[3].name + "</h4>" +
-      "<hr><h4>Olympic Year: " + placeOlympics[3].year + "</h4>")
+      "<hr><h4>Olympic Year: " + placeOlympics[3].year + "</h4>" + 
+      "<h4>Olympic Link: " + placeOlympics[3].link + "</h4>")
     .addTo(olympicMap);
 
   // Add Atlanta Flag Icon 
   L.marker(placeOlympics[4].location, { icon: USAFlag_GA })
     .addTo(olympicMap)
     .bindPopup("<h4>Olympic Location: " + placeOlympics[4].name + "</h4>" +
-      "<hr><h4>Olympic Year: " + placeOlympics[4].year + "</h4>")
+      "<hr><h4>Olympic Year: " + placeOlympics[4].year + "</h4>" + 
+      "<h4>Olympic Link: " + placeOlympics[4].link + "</h4>")
     .addTo(olympicMap);
 
   // Add Spain Flag Icon 
   L.marker(placeOlympics[5].location, { icon: SpainFlag })
     .addTo(olympicMap)
     .bindPopup("<h4>Olympic Location: " + placeOlympics[5].name + "</h4>" +
-      "<hr><h4>Olympic Year: " + placeOlympics[5].year + "</h4>")
+      "<hr><h4>Olympic Year: " + placeOlympics[5].year + "</h4>" + 
+      "<h4>Olympic Link: " + placeOlympics[5].link + "</h4>")
     .addTo(olympicMap);
 
   // Add South Korea Flag Icon 
   L.marker(placeOlympics[6].location, { icon: SKFlag })
     .addTo(olympicMap)
     .bindPopup("<h4>Olympic Location: " + placeOlympics[6].name + "</h4>" +
-      "<hr><h4>Olympic Year: " + placeOlympics[6].year + "</h4>")
+      "<hr><h4>Olympic Year: " + placeOlympics[6].year + "</h4>" + 
+      "<h4>Olympic Link: " + placeOlympics[6].link + "</h4>")
     .addTo(olympicMap);
 
   // Add Los Angeles Flag Icon 
   L.marker(placeOlympics[7].location, { icon: USAFlag_LA })
     .addTo(olympicMap)
     .bindPopup("<h4>Olympic Location: " + placeOlympics[7].name + "</h4>" +
-      "<hr><h4>Olympic Year: " + placeOlympics[7].year + "</h4>")
+      "<hr><h4>Olympic Year: " + placeOlympics[7].year + "</h4>" + 
+      "<h4>Olympic Link: " + placeOlympics[7].link + "</h4>")
     .addTo(olympicMap);
 
   // Add Russian Flag Icon 
   L.marker(placeOlympics[8].location, { icon: RussianFlag })
     .addTo(olympicMap)
     .bindPopup("<h4>Olympic Location: " + placeOlympics[8].name + "</h4>" +
-      "<hr><h4>Olympic Year: " + placeOlympics[8].year + "</h4>")
+      "<hr><h4>Olympic Year: " + placeOlympics[8].year + "</h4>" + 
+      "<h4>Olympic Link: " + placeOlympics[8].link + "</h4>")
     .addTo(olympicMap);
 
   // Add Canada Flag Icon 
   L.marker(placeOlympics[9].location, { icon: CanadaFlag })
     .addTo(olympicMap)
     .bindPopup("<h4>Olympic Location: " + placeOlympics[9].name + "</h4>" +
-      "<hr><h4>Olympic Year: " + placeOlympics[9].year + "</h4>")
+      "<hr><h4>Olympic Year: " + placeOlympics[9].year + "</h4>" + 
+      "<h4>Olympic Link: " + placeOlympics[9].link + "</h4>")
     .addTo(olympicMap);
 }
