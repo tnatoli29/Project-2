@@ -228,3 +228,11 @@ padding-top: 5px;
   text-decoration: underline;
 }
 /* End Of Link Color  */
+
+.credit {
+  text-align: center;
+  font-size: 12px;
+  font-family: Tahoma;
+  padding-top: 15px;
+  padding-bottom: 35px;
+}
