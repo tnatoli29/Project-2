@@ -4,6 +4,7 @@ function buildPlot(){
    // console.log(data);
     // console.log(years);  
     var sport=data.map(data=>data.sport)
+    console.log(sport)
     var wordFrequencyAll = {};
     function allYears() {
       // Convert string to an array of words
